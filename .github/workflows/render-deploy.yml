@@ -1,0 +1,27 @@
+name: Deploy to Render
+
+# This workflow triggers automatically when you push code to the 'main' branch.
+# You can change 'main' to 'master' or any other branch you use.
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      # Step 2: Hit the Render API to trigger the deployment
+      - name: Trigger Render Deploy
+        # We use a POST request to the deploys endpoint.
+        run: |
+          curl --request POST \
+            --url https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys \
+            --header 'Accept: application/json' \
+            --header 'Authorization: Bearer ${{ secrets.RENDER_API_KEY }}' \
+            --data '{"clearCache": "clear"}'
