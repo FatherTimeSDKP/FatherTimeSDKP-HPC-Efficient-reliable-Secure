@@ -1,0 +1,3 @@
+Flask>=3.0,<4
+stripe>=12,<14
+gunicorn>=23,<24
