@@ -1,19 +1,46 @@
-from fastapi import FastAPI, Security, HTTPException, status
-from fastapi.security.api_key import APIKeyHeader
 import os
+import stripe
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
+from pydantic import BaseModel
+
 app = FastAPI()
-API_KEY_NAME = "X-API-Key"
-api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
-# Simulated database check (Replace with Firestore/Memorystore check)
-VALID_API_KEYS = {"sample_stripe_active_key_123": "active"}
-async def get_api_key(api_key: str = Security(api_key_header)):
-    if api_key in VALID_API_KEYS and VALID_API_KEYS[api_key] == "active":
-        return api_key
-    raise HTTPException(
-        status_code=status.HTTP_403_FORBIDDEN,
-        detail="Could not validate credentials. Active subscription required."
-    )
-@app.get("/v1/coherence")
-async def coherence_endpoint(api_key: str = Security(get_api_key)):
-    # Your recovered SDKP coherence engine logic here
-    return {"status": "success", "data": "coherence_metric_results"}
+
+# Loaded securely from environment variables — NOT hardcoded
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+DOMAIN = os.getenv("DOMAIN", "http://localhost:8000")
+
+# Map your pricing tiers to Stripe Price IDs (created in your Stripe Dashboard)
+PRICE_TIERS = {
+    "starter": "price_starter_id_from_stripe",    # e.g., $29/mo
+    "pro": "price_pro_id_from_stripe",            # e.g., $99/mo
+    "enterprise": "price_enterprise_id_from_stripe" # e.g., $299/mo
+}
+
+class CheckoutRequest(BaseModel):
+    tier: str
+    customer_email: str
+
+@app.post("/create-checkout-session")
+def create_checkout_session(data: CheckoutRequest):
+    price_id = PRICE_TIERS.get(data.tier.lower())
+    if not price_id:
+        raise HTTPException(status_code=400, detail="Invalid subscription tier selected.")
+
+    try:
+        checkout_session = stripe.checkout.Session.create(
+            customer_email=data.customer_email,
+            payment_method_types=["card"],
+            line_items=[
+                {
+                    "price": price_id,
+                    "quantity": 1,
+                },
+            ],
+            mode="subscription",
+            success_url=f"{DOMAIN}/success?session_id={{CHECKOUT_SESSION_ID}}",
+            cancel_url=f"{DOMAIN}/cancel",
+        )
+        return {"checkout_url": checkout_session.url}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
