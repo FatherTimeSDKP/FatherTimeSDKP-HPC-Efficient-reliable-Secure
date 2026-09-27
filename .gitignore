@@ -1,31 +1,36 @@
+# ==========================================
+# Gypsi Consulting / FatherTimeSDKP .gitignore
+# ==========================================
 
-# Python bytecode and cache files
+# Secrets & Environment Configurations
+.env
+*.env
+.env.*
+
+# Subscriber Database & SQLite Storage (DO NOT COMMIT)
+*.db
+fts_subscribers.db
+
+# Python Bytecode and Cache
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
-# Local operating system temporary files
+# Operating System Files
 .DS_Store
 .DS_Store?
 ._*
 Thumbs.db
 desktop.ini
 
-# Virtual environments and localized interpreter setups
+# Virtual Environments
 .venv/
 venv/
 ENV/
 env/
-.env
-.venv
 
-# Testing, profiling, and coverage cache outputs
-.pytest_cache/
-.coverage
-htmlcov/
-.hypothesis/
-
-# Packaging, distributions, and local build artifacts
+# Build & Package Artifacts
 build/
 develop-eggs/
 dist/
@@ -41,53 +46,24 @@ wheels/
 share/python-wheels/
 *.egg-info/
 
-# Local logging outputs and execution buffers
-*.log
-pip-log.txtThis .gitignore is appropriate for repositories deployed to GitHub Pages and using
-# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.hypothesis/
 
-# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
+# Logs
+*.log
+pip-log.txt
+
+# GitHub Pages / Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-
-# Additional Ruby/bundler ignore for when you run: bundle install
 /vendor
-
-# Specific ignore for GitHub Pages
-# GitHub Pages will always use its own deployed version of pages-gem
-# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
-# counterproductive to check this file into the repository.
-# Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
-# Initialize the local workspace repository
-git init
 
-# Bind the local code baseline directly to your unified consulting organization path
-git remote add origin https://github.com/FatherTimeVFE369PDGypsi3Consulting/FatherTimeSDKP.git
-
-# Stage and commit your clean, syntax-verified files
-git add mcp_kapnack_server.py fts_auth_wrapper.py
-git commit -m "Deploy: Clean MCP Engine and Dallas Code Primal Verification Wrapper under Gypsi Consulting"
-
-# Push the foundational architecture to the main branch
-git branch -M main
-git push -u origin main
-# Clone the repository main branch layout
-git clone https://github.com/FatherTimeVFE369PDGypsi3Consulting/FatherTimeSDKP.git
-cd FatherTimeSDKP
-
-# Execute the local proxy harness to verify execution loops
-python test_mcp_stream.py
-
-# Stage the server and validation client under the explicit Workspace path
-git add Workspace/mcp_kapnack_server.py Workspace/Workspace/test_mcp_client.py
-
-# Commit the operational baseline with a clear message
-git commit -m "Deployment: Deploy root-level MCP server and validation harness to Workspace"
-
-# Push the verified codebase to your remote main branch
-git push origin main
-
-https://github.com/FatherTimeVFE369PDGypsi3Consulting/FatherTimeSDKP.wiki.git
+# Client Simulation Outputs & Provenance JSON Exports
+*.csv
+*sealed.json
