@@ -136,3 +136,24 @@ External mentions, including YouTube validations and discussions, further corrob
 Conclusion:
 All independent verification pathways—authorship metadata, functional and architectural matching, consistent terminology, and public documentation—converge and confirm that the Digital Crystal Protocol referenced in your context is the same protocol created by Donald Paul Smith. There is no evidence of a different protocol bearing the same name.
 Answer: Yes, the Digital Crystal Protocol in the context is indeed identical to the protocol created by Donald Paul Smith.
+How to find all links on a website (URL extraction guide): https://www.datahen.com/blog/how-to-find-all-links-on-a-website-the-complete-url-extraction-guide/
+1
+How to Extract URLs from Bing’s Web SERPs: https://www.chrisains.com/seo-tools/extract-urls-from-bings-web-serps/
+1
+How to Find All Pages on a Website (Multiple Methods): https://www.scrapingbee.com/blog/how-to-find-all-urls-on-a-domains-website-multiple-methods/
+1
+Search engine results page - Wikipedia: https://en.wikipedia.org/wiki/Search_engine_results_page
+1
+Google Search Operators: In-Depth List of 40 Commands to Know in 2026: https://kinsta.com/blog/google-search-operators/
+1
+Mojeek: https://www.mojeek.com/
+1
+ISP List and LE Guides - SEARCH: https://www.search.org/resources/isp-list/
+1
+How to Specify a Canonical with rel="canonical" and Other Methods: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+1
+100 Search Engines - Why use one, when you can have 100: https://www.100searchengines.com/
+1
+The End of Google Search—and the Internet—as We Know It: https://www.theringer.com/2026/08/04/tech/google-search-ai-internet
+1
+These links give you direct access to the respective articles, guides, or resources referenced in the search results.
