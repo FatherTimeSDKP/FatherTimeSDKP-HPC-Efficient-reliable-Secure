@@ -4,6 +4,13 @@ Unique Entity Identifier (UEI): C7UQMR5B6268
 SAM.gov Point of Contact: Christi Holder
 Technical Lead: Donald Paul Smith (Father Time) | ORCID: 0009-0003-7925-1653
 Commercial & Federal Registration: Active (Eligible for Micro-Purchases & Subcontracts)
+Christi Holder | Operations & Contracts
+Gypsi Consulting | SAM.gov UEI: C7UQMR5B6268
+Phone: (352) 949-1034 | Email: gypsiblu3@gmail.com
+Donald Paul Smith
+phone number :(352)-507-3213
+email: Dallasnamiyadaddy@gmail.com
+[View Capability Statement (PDF)]
 
 Deterministic state-evolution and coherence simulations secured via Dallas's Code crystal provenance.
 > 🌟 **Validated Research Impact:** Over 12,000+ downloads across Zenodo & OSF repositories.  
