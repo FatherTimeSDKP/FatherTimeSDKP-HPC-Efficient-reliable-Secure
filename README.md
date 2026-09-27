@@ -1,4 +1,9 @@
 # FatherTimeSDKP HPC Engine API
+Gypsi Consulting | Advanced Simulation & HPC Systems Architecture
+Unique Entity Identifier (UEI): C7UQMR5B6268
+SAM.gov Point of Contact: Christi Holder
+Technical Lead: Donald Paul Smith (Father Time) | ORCID: 0009-0003-7925-1653
+Commercial & Federal Registration: Active (Eligible for Micro-Purchases & Subcontracts)
 
 Deterministic state-evolution and coherence simulations secured via Dallas's Code crystal provenance.
 
