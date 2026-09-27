@@ -1,82 +1,29 @@
-# FatherTimeSDKP: High-Performance Simulation & Coherence API
+# FatherTimeSDKP HPC Engine API
 
-The recovered open-core engine for computational coherence and temporal evolution models. 
+Deterministic state-evolution and coherence simulations secured via Dallas's Code crystal provenance.
 
-## Get API Access Instantly
+## 🚀 Live API Endpoints
+- `GET /health` — Service health monitor
+- `POST /v1/coherence` — Multi-variable tensor coherence metric
+- `POST /v1/evolve` — Forward state manifold projections
+- `POST /v1/verify-seal` — Public seal validation
 
-We host a secure, high-availability endpoints for academic researchers, developers, and simulation labs.
+## 🔑 Pricing & Access
+Purchase an API key to access `/v1/coherence` and `/v1/evolve`:
 
-| Plan | Price | Included Requests / Month | Access Link |
-| --- | --- | --- | --- |
-| **Developer Tier** | $29/mo | 50,000 requests | [Subscribe & Get API Key](https://buy.stripe.com/mock_developer_link) |
-| **Lab Tier** | $99/mo | 500,000 requests | [Subscribe & Get API Key](https://buy.stripe.com/mock_lab_link) |
-| **Enterprise / Custom** | $299+/mo | Unlimited + Custom Support | [Contact Gypsi Consulting](mailto:consulting@yourdomain.com) |
-
-*Subscriptions are securely processed by Stripe. Your unique API key will be instantly emailed upon purchase.*
-
-## Quick Start Example
-
-```bash
-curl -X POST https://api.yourdomain.com/v1/coherence \
-  -H "X-API-Key: sk_sdkp_your_key_here" \
-  -H "Content-Type: application/json" \
-  -d '{"data": [0.12, 0.45, 0.78, 0.99]}'
-
-
-* **Variables (SDVR):** Size, Density, Velocity, and Rotation tracking fields.
-* **Logic (SD&N):** Shape, Dimension, and Number metric spaces replacing continuous coordinate manifolds.
-* **Governance (Amiyah's Law):** The baseline equilibrium rule dictating system balance and loop closure.
-* **Processor (The Kapnack Solver):** A discrete gradient engine running Vacuum Field Equation 1 (VFE1) and Quantum Correlation Coefficient 0 (QCC0) simultaneously to calculate exact system packing densities.
-* **Security (Dallas's Code):** A prime-terminated binary serialization and provenance layer ensuring data integrity.
-
-## Technical Components
-https://github.com/FatherTimeSDKP/pt-v5-prize-claimer-gh-action-bot
-
-This branch contains the production-ready code files required to execute and verify the framework locally or over cloud environments:
-https://github.com/FatherTimeSDKP/FatherTimeSDKP-SD-N-EOS-QCC
-
-1. `mcp_kapnack_server.py`: A Model Context Protocol (MCP) server that exposes the Kapnack Solver directly to LLM agents and orchestration layers via standard input/output (`stdio`) pipelines.
-2. `fts_auth_wrapper.py`: A high-performance cryptographic module implementing Dallas's Code to sign simulation log arrays with deterministic, prime-terminated validation scales.
-3. `test_mcp_stream.py`: A local proxy harness used to debug JSON-RPC tool calls and test stream integrity without triggering terminal execution blockades.
-
-## Execution and Installation
-
-Ensure your local Python environment is initialized with standard dependencies before mounting the server:
-
-python test_mcp_stream.py
-The Kapnack Discrete Time-Evolution Integrator is the computational heart of the FatherTimeSDKP framework — a physics simulation engine that tracks how multiple bodies interact and evolve over time, built entirely on SDKP principles rather than conventional mathematics.
-
-The Core Problem It Solves
-Standard physics simulations use continuous integration methods like Runge-Kutta — they chop time into arbitrary small pieces and approximate what happens between them. The problem is the step size is a numerical guess, not a physical fact. The Kapnack Integrator eliminates this by deriving the step size directly from the SDKP timescale:
-τ = S · D / K
-The integration step is not a parameter — it IS the physics. The bodies themselves determine how fast time moves through the simulation.
-
-What It Actually Does
-For every pair of bodies in the system, the engine computes two quantities:
-	∙	Γ (packing density gradient) — how strongly the density difference between two bodies drives their interaction
-	∙	κ (kinetic coupling) — how their velocity and rotation states are linked through the EOS constant (29,780 m/s)
-These combine into an effective acceleration that updates each body’s position and velocity every epoch using a discrete Verlet step — the same approach used in molecular dynamics, but governed by SDKP geometry rather than Newtonian force laws.
-
-Three Built-In Checks
-Every epoch produces three verification outputs:
-	1.	System coherence C — reported as a range (0.13%–0.20% EOS deviation band), never a false point value
-	2.	Amiyah’s Law status — monitors whether each body’s local density has returned to baseline. When it does, the active field state terminates automatically
-	3.	Convergence report — tracks whether the system is approaching equilibrium monotonically or oscillating
-
-
-
-
- The Proximity Paradox: Equal Mass, Different Size
-
-If a smaller object and a larger, heavier object are adjusted to have the exact same total mass, the smaller object must possess a drastically higher internal packing density to compensate for its compact volume.
-
-* **The Small Compressed Pull:** Because its physical size boundary is small, an external tracking node can approach significantly closer to its center of density before making physical contact. Since gravitational pull scales inversely with the square of the distance to the center of mass, the gravitational pull at the immediate surface of the smaller object becomes incredibly intense and steep.
-* **The Large Diffuse Pull:** The larger object spreads the exact same mass over a wider spatial footprint. Because its physical boundary sits far from its center, an external tracking node is kept at a distance, resulting in a much weaker surface gravitational pull.
+| Plan | Limit | Price | Purchase Link |
+| :--- | :--- | :--- | :--- |
+| **Starter** | 10k req/mo | $29/mo | [Get Starter Key](https://buy.stripe.com/YOUR_PAYMENT_LINK_29) |
+| **Pro** | 100k req/mo | $99/mo | [Get Pro Key](https://buy.stripe.com/YOUR_PAYMENT_LINK_99) |
+| **Enterprise** | Dedicated | $299/mo | [Get Enterprise Key](https://buy.stripe.com/YOUR_PAYMENT_LINK_299) |
 
 ---
 
-### 2. Volumetric Scaling: Constant Density, Divergent Mass
-
+### 💼 Gypsi Consulting (Custom Integrations)
+Need custom parameter manifolds, dedicated HPC deployments, or direct SDKP engine integration into your repo?
+- **API Integration Sprint (48hr):** $750
+- **Custom Simulation Notebook:** $1,200
+- **Email / Book:** [Schedule Scoping Call](https://calendly.com/
 If the smaller object and the larger object share the exact same density profile, then size directly dictates the total number of mass nodes present in the system. Because volume scales cubically relative to linear size ($V \propto S^3$), a small change in size causes a massive shift in total gravitational pull:
 
 * **Mass Disparity:** Halving the linear size of an object reduces its volumetric capacity—and therefore its total mass and overall gravitational pull—to exactly $\frac{1}{8}$ of the original system's pull at an equivalent external distance.
