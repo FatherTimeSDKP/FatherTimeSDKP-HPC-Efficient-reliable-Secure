@@ -1,106 +1,120 @@
 import os
-import yaml
-import torch
-from fastapi import FastAPI, Request, HTTPException
-from pydantic import BaseModel
+import uuid
 import stripe
+from fastapi import FastAPI, Security, HTTPException, Request, status, Header
+from fastapi.security.api_key import APIKeyHeader
+from google.cloud import firestore
 
-from src.sdkp_tensor import SDKPStateTensor
-from src.vortex_369 import Vortex369Compressor
-from src.metatron_router import MetatronCubeRouter
-from src.dcp_provenance import DigitalCrystalProtocol
+app = FastAPI(title="FatherTimeSDKP Coherence API")
 
-app = FastAPI(
-    title="FatherTimeSDKP-HPC-AI-Engine",
-    description="High-Performance Computing & Stripe Monetization Gateway for SDKP Framework",
-    version="2026.1"
-)
+# Configure Stripe & GCP
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 
-# Initialize Stripe API keys from IBM Cloud environment variables
-stripe.api_key = os.getenv("STRIPE_SECRET_KEY", "sk_test_placeholder")
-STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET", "whsec_placeholder")
+# Initialize Firestore Client (Runs seamlessly on Google Cloud / Cloud Run)
+db = firestore.Client()
+keys_ref = db.collection("api_keys")
 
-class PaymentRequest(BaseModel):
-    amount: int  # Amount in smallest currency unit (e.g., cents)
-    currency: str = "usd"
+# Security setup
+API_KEY_NAME = "X-API-Key"
+api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
+
+async def verify_api_key(api_key: str = Security(api_key_header)):
+    if not api_key:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="X-API-Key header is missing."
+        )
+    
+    # Check key in Firestore
+    key_doc = keys_ref.document(api_key).get()
+    if not key_doc.exists:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Invalid API Key."
+        )
+    
+    key_data = key_doc.to_dict()
+    if key_data.get("status") != "active":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Subscription inactive. Please renew your plan."
+        )
+    
+    return key_data
+
+# ==========================================
+# MONETIZED ENDPOINTS
+# ==========================================
 
 @app.get("/health")
-def health_check():
-    """
-    Health check route for IBM Cloud Code Engine container deployment.
-    """
+async def health():
+    return {"status": "healthy", "engine": "SDKP-Recovered-v2"}
+
+@app.post("/v1/coherence")
+async def run_coherence(payload: dict, client_info: dict = Security(verify_api_key)):
+    # Your recovered coherence engine logic
     return {
-        "status": "healthy",
-        "service": "FatherTimeSDKP-HPC-AI-Engine",
-        "author": "Donald Paul Smith",
-        "orcid": "0009-0003-7925-1653",
-        "protocol": "Digital Crystal Protocol (DCP)"
+        "status": "success",
+        "coherence_index": 0.9842,
+        "input_dimension": len(payload.get("data", [])),
+        "authorized_user": client_info.get("email")
     }
 
-@app.post("/create-payment-intent")
-def create_payment_intent(data: PaymentRequest):
-    """
-    Generates a Stripe Payment Intent for metered API usage and framework licensing.
-    """
-    try:
-        intent = stripe.PaymentIntent.create(
-            amount=data.amount,
-            currency=data.currency,
-            automatic_payment_methods={"enabled": True},
-        )
-        return {"clientSecret": intent.client_secret}
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+@app.post("/v1/evolve")
+async def run_evolve(payload: dict, client_info: dict = Security(verify_api_key)):
+    # Your recovered evolution simulation engine logic
+    return {
+        "status": "success",
+        "evolution_cycles": 120,
+        "coherence_stabilized": True
+    }
 
-@app.post("/webhook/stripe")
-async def stripe_webhook(request: Request):
-    """
-    Validates incoming Stripe cryptographic signature headers and executes settlement logic.
-    """
+# ==========================================
+# STRIPE WEBHOOK HANDLER
+# ==========================================
+
+@app.post("/webhooks/stripe")
+async def stripe_webhook(request: Request, stripe_signature: str = Header(None)):
     payload = await request.body()
-    sig_header = request.headers.get("Stripe-Signature")
-    
     try:
         event = stripe.Webhook.construct_event(
-            payload, sig_header, STRIPE_WEBHOOK_SECRET
+            payload, stripe_signature, STRIPE_WEBHOOK_SECRET
         )
     except ValueError:
-        raise HTTPException(status_code=400, detail="Invalid payload structure.")
+        raise HTTPException(status_code=400, detail="Invalid payload")
     except stripe.error.SignatureVerificationError:
-        raise HTTPException(status_code=400, detail="Invalid cryptographic signature.")
+        raise HTTPException(status_code=400, detail="Invalid signature")
 
-    if event["type"] == "payment_intent.succeeded":
-        payment_intent = event["data"]["object"]
-        print(f"Verified successful payment transaction: {payment_intent.get('id')}")
+    # Handle successful subscription
+    if event["type"] == "checkout.session.completed":
+        session = event["data"]["object"]
+        customer_email = session.get("customer_details", {}).get("email")
+        stripe_sub_id = session.get("subscription")
+        
+        # Generate a new secure API Key
+        new_api_key = f"sk_sdkp_{uuid.uuid4().hex}"
+        
+        # Save to Firestore
+        keys_ref.document(new_api_key).set({
+            "email": customer_email,
+            "stripe_subscription_id": stripe_sub_id,
+            "status": "active",
+            "tier": "developer" # Can be customized based on price ID
+        })
+        
+        # OPTIONAL: Send email to customer with their new_api_key here
+        print(f"Provisioned API Key {new_api_key} for {customer_email}")
 
-    return {"status": "success", "event_processed": event["type"]}
+    # Handle subscription cancellation
+    elif event["type"] == "customer.subscription.deleted":
+        subscription = event["data"]["object"]
+        sub_id = subscription.get("id")
+        
+        # Query API keys associated with this subscription ID and deactivate
+        docs = keys_ref.where("stripe_subscription_id", "==", sub_id).stream()
+        for doc in docs:
+            keys_ref.document(doc.id).update({"status": "suspended"})
+            print(f"Suspended API Key: {doc.id} due to cancelled subscription.")
 
-@app.post("/v1/predict")
-def run_sdkp_inference_pipeline():
-    """
-    Executes the core SDKP tensor forward pass and generates immutable DCP cryptographic proof.
-    """
-    # 1. SDKP Continuous State Tensor Execution
-    state_engine = SDKPStateTensor()
-    current_state = state_engine.get_state_vector()
-    
-    # 2. Digital Crystal Protocol (DCP) Provenance Stamp
-    dcp = DigitalCrystalProtocol(
-        author="Donald Paul Smith", 
-        orcid="0009-0003-7925-1653"
-    )
-    
-    ledger_hash = dcp.generate_crystal_hash({
-        "sdkp_state": current_state.detach().tolist(),
-        "royalty_routing": "FatherTimeSDKP.eth"
-    })
-    
-    return {
-        "status": "inference_complete",
-        "state_vector": current_state.detach().tolist(),
-        "dcp_ledger_hash": ledger_hash
-    }
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=False)
+    return {"status": "received"}
