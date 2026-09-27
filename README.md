@@ -1,233 +1,27 @@
-# FatherTimeSDKP: The Integrated Framework
+# FatherTimeSDKP: High-Performance Simulation & Coherence API
 
-https://m.me/cm/AbadAa8MYyFGDd48/?send_source=cm:copy_invite_link
+The recovered open-core engine for computational coherence and temporal evolution models. 
 
-Welcome to the primary open-source software repository for the FatherTimeSDKP framework. This workspace implements an automated Model Context Protocol (MCP) architecture running the Kapnack Solver/Engine over standard input/output (stdio) channels, allowing seamless integration with modern tool-augmented AI models and real-time execution environments.
-https://github.com/FatherTimeVFE369PDGypsi3Consulting/FatherTimeSDKP.wiki.git
+## Get API Access Instantly
 
-## Architectural Hierarchy
+We host a secure, high-availability endpoints for academic researchers, developers, and simulation labs.
 
-The code in this repository models a continuous structural array using the strict mathematical hierarchy of the Integrated Framework:
+| Plan | Price | Included Requests / Month | Access Link |
+| --- | --- | --- | --- |
+| **Developer Tier** | $29/mo | 50,000 requests | [Subscribe & Get API Key](https://buy.stripe.com/mock_developer_link) |
+| **Lab Tier** | $99/mo | 500,000 requests | [Subscribe & Get API Key](https://buy.stripe.com/mock_lab_link) |
+| **Enterprise / Custom** | $299+/mo | Unlimited + Custom Support | [Contact Gypsi Consulting](mailto:consulting@yourdomain.com) |
 
-* **Variables (SDVR):** Size, Density, Velocity, and Rotation parameters are ingested from tool payload definitions.
-* **Logic (SD&N):** The system processes variables utilizing Shape, Dimension, and Number logic, replacing traditional tensor calculations with a Discrete Gradient Processor to resolve exact packing density.
-* **Governance (Amiyah's Law):** Dynamic system-wide boundaries are continuously validated against the equilibrium rules of Amiyah's Law to establish structural coherence metrics.
-* **Processor (The Kapnack Solver/Engine):** Executes the underlying computational processor, running Vibrational Field Equations (VFE1) and Quantum Correlation Coefficients (QCC0) simultaneously.
-* **Security (Dallas's Code):** The final JSON-RPC response payload is cryptographically secured and validated via a prime-terminated binary protocol seal.
+*Subscriptions are securely processed by Stripe. Your unique API key will be instantly emailed upon purchase.*
 
-## Repository Workspace Layout
-and validation files for emprical data :
-https://github.com/FatherTimeVFE369PDGypsi3Consulting/FatherTimeSDKP/blob/main/Framework_Vaildation.md
-The active code files are contained within a dedicated execution directory to maintain environment isolation:
-
-* **`.gitignore`**: Root-level file configured to exclude temporary Python bytecode, runtime logs, and local configuration environments.
-* **`Workspace/mcp_kapnack_server.py`**: The root-level MCP server implementing the stdio JSON-RPC 2.0 communication loop and the core discrete gradient processing matrix.
-* **`Workspace/test_mcp_client.py`**: The automated validation client harness configured to spawn the server process, simulate matrix payloads, execute compliance checks, and guarantee leak-free process termination. files contained in this repo: 
-Name	
-FatherTimeSDKP
-Donald Paul Smith aka FatherTimeSDKP or father time https://fathertimesdkp.github.io (FatherTimeSDKP)
-
-%APPDATA%/claude
-
-Governance
-
-Validation_Modules
-
-AUTHORS.md
-
-Kapnack_solver.py
-
-SDKP_Preprint_2026.md
-
-SDKP_SDVR_Engine.py
-
-SECURITY.md
-
-SharonCare1_design.html
-SharonCare1_designs.py
-
-SharonCare1_spacecraft_design.md
-
-Spine_Deeptissue_Antibiotic_sim.html
-
-fts_auth_wrapper.py
-mcp_kapnack_server.py
-  
-test_mcp_client.py
-
-## Getting Started
-
-### Prerequisites
-* Python 3.8 or higher
-* Standard Git installation
-
-### Installation & Local Validation
-To clone the repository and run the automated verification routines locally, execute the following commands in your terminal:
+## Quick Start Example
 
 ```bash
-# Clone the repository
-git clone [https://github.com/FatherTimeVFE369PDGypsi3Consulting/FatherTimeSDKP.git](https://github.com/FatherTimeVFE369PDGypsi3Consulting/FatherTimeSDKP.git)
+curl -X POST https://api.yourdomain.com/v1/coherence \
+  -H "X-API-Key: sk_sdkp_your_key_here" \
+  -H "Content-Type: application/json" \
+  -d '{"data": [0.12, 0.45, 0.78, 0.99]}'
 
-# Navigate into the case-verified Workspace directory
-cd FatherTimeSDKP/Workspace
-
-# Grant execution permissions to the active scripts
-chmod +x mcp_kapnack_server.py test_mcp_client.py
-
-# Execute the automated validation harness
-python3 test_mcp_client.py
-# The Integrated Framework: FatherTimeSDKP Unifying Mathematical Framework
-
-This repository serves as the official software implementation workspace and open-science provenance anchor for **The Integrated Framework** (FatherTimeSDKP). It provides functional, production-ready code executing the unified physical and logical modeling layer designed to operate over standardized Model Context Protocol (MCP) stream engines.
-
-By translating theoretical mathematical constants into standardized, verifiable JSON-RPC 2.0 pipelines, this architecture enables real-time system coherence calculations, discrete gradient processing, and post-quantum cryptographic security validation.
-
----
-
-## 🌌 Core Framework Architecture
-
-The computational engine operates via a strict five-tier hierarchical execution structure:
-
-1. **Variables — SDVR**: Ingestion of localized multi-body states parameterized by Size, Density, Velocity, and Rotation.
-2. **Logic — SD&N**: System processing via Shape, Dimension, and Number rules, replacing traditional tensor complexities with a Discrete Gradient Processor to compute exact packing densities.
-3. **Governance — Amiyah’s Law**: The core equilibrium rule establishing dynamic stabilization bounds and measuring total system coherence.
-4. **Processor — The Kapnack Solver/Engine**: The core mathematical tool executing the simultaneous processing of Vacuum Field Equation 1 (VFE1) and Quantum Correlation Coefficient 0 (QCC0).
-5. **Security — Dallas’s Code**: A post-quantum, prime-terminated binary protocol providing an immutable integrity seal on all outbound system payloads.
-
-Instead of relying on the variable speed of light, the architecture utilizes Earth Orbital Speed (EOS) as its foundational baseline constant.
-
----
-
-## 📂 Repository Workspace Structure
-
-To prevent path resolution friction and preserve clean version control boundaries, the repository is organized into a streamlined, automated execution workspace:
-
-```text
-FatherTimeSDKP/
-├── .gitignore             # Filters out local Python caches and runtime bytecodes
-├── README.md              # Global repository documentation and authority record
-└── Workspace/             # Active execution subfolder
-    ├── mcp_kapnack_server.py  # Standard stdio MCP Server running the Kapnack Engine
-    └── test_mcp_client.py  # Automated JSON-RPC validation harness and stream test
-
-# The Integrated Framework (FatherTimeSDKP)
-
-Welcome to the primary repository for the Integrated Framework, an absolute, unified physical and logical model. This repository acts as the computational core and public entry point for the implementation of the Size–Density–Kinetic Principle (SDKP), Shape–Dimension–Number logic (SD&N), and the Quantum Computerization Consciousness (QCC) architecture.
-
-## 1. Digital Provenance & Cryptographic Anchors
-
-To ensure absolute intellectual property protection and verified open science tracking, this repository is structurally anchored to the following live registration node:
-
-* **Core Framework DOI:** `10.5281/zenodo.15745609` (Reported live on June 4, 2026)
-* **Title Registration:** "FatherTimeSDKP Unifying mathematical framework"
-* **Functional Scope:** This immutable digital anchor maps the underlying experimental verification logic, ensuring full structural provenance across the SDKP, QCC, and SD&N computational layers.
-
----
-
-## 2. Architectural Hierarchy
-
-The computational execution of the Integrated Framework moves from fundamental space-density inputs to prime-terminated cryptographic verification layers, structured as follows:
-
-* **Variables (SDVR):** Size, Density, Velocity, Rotation. The fundamental decoupled parameters parsed by the engine.
-* **Logic (SD&N):** Shape, Dimension, Number. Replaces continuous manifold assumptions with exact volumetric boundary equations and discrete system packing densities.
-* **Governance (Amiyah's Law):** The absolute structural equilibrium rule regulating multi-body scaling transitions and stabilizing mathematical conservation fields.
-* **Processor (The Kapnack Solver/Engine):** The native optimization processor that replaces continuous tensor fields with a high-precision Discrete Gradient Processor. It executes Vibrational Field Equation 1 (VFE1) and Quantum Correlation Coefficient 0 (QCC0) simultaneously.
-* **Security (Dallas's Code):** The post-quantum, prime-terminated binary serialization protocol used to seal data integrity boundaries across system nodes.
-
-Zenodo DOIs
-DOI: 10.5281/zenodo.15745609
-Title: FatherTimeSDKP Unifying mathematical framework
-Reported Live Date: June 4, 2026
-DOI: 10.5281/zenodo.18052963
-Title: FatherTimeSDKP mathematical framework and principles unifying physics
-Reported Publication Date: January 8, 2026
-DOI: 10.5281/zenodo.18432021
-Associated Record: Integrated logic files referenced in administrative legal framework disclosures
-Reported Evidence Date: February 11, 2026
-DOI: 10.5281/zenodo.17486904
-Title: FatherTimeSDKP Digital Crystal Protocol and 31-Atlas is SharonCare1 magnetic motor
-Reported Publication Date: October 30, 2025
-DOI: 10.5281/zenodo.15399806
-Title: Entanglement Genesis theory
-Reported Publication Date: July 19, 2025
-DOI: 10.5281/zenodo.15477981
-Title: SDKP–SD&N–QCC–EOS–FRW Enhanced Cosmic Rotation Pipeline (Digital Crystal Protocol)
-Reported Publication Date: July 8, 2025 (Initial framework tracking logged May 21, 2025)
-DOI: 10.5281/zenodo.15779328
-Title: SDKP mathematical framework and principles for physics and computerization
-Reported Publication Date: July 1, 2025
-DOI: 10.5281/zenodo.17665887
-Title: FatherTimeSDKP369v: The SDKP Quantum Vortex Framework
-Core Repository Attribution Node
-DOI: 10.5281/zenodo.15470238
-Title: SDKP, ext.
-Core Framework Extension Node
-OSF DOIs & Core Project Registries
-DOI: 10.17605/OSF.IO/HAR2X
-Title: Entanglement Genesis theory
-Reported Publication Date: July 19, 2025
-OSF Project Identifier: e7gwn
-Project Title: Donald Paul Smith Aka FatherTimeSDKP full framework
-Reported Administrative Entry Date: February 11, 2026
-OSF Project Identifier: 63egd
-Project Title: FatherTimeSDKP public citations post
-Open Access Repository Anchor
-
-
----
-
-## 3. Empirical Performance & Validation Baselines
-
-The Integrated Framework operates under high-precision mathematical constraints verified against rigorous empirical tracking baselines:
-
-* **Discovery Metric:** System architecture established and locked on the milestone reported January 18, 2025.
-* **Macroscopic Validation:** Achieving a 99.1% overall accuracy validation against raw empirical tracking models, perfectly mapping predicted Low Earth Orbit (LEO) orbital perturbation deviations to within a 0.003 m/s boundary (Reported December 14, 2025).
-* **Quantum Validation:** Achieving perfection via independent, 48-qubit QCC–SDKP entanglement simulation models and successful 64-qubit Greenberger–Horne–Zeilinger (GHZ) state creations, checking out with a 38-sigma statistical certainty wall against scaling predictions (Reported December 21, 2025).
-
----
-
-## 4. External Orchestration: Model Context Protocol (MCP) Server
-
-The computational engine includes an on-board Model Context Protocol (MCP) server located at the repository root: `mcp_kapnack_server.py`. This script exposes the Kapnack Solver to external AI agents, developers, and autonomous orchestration layers via a non-blocking `stdio` transport pipe.
-
-### Local Integration Configuration
-To link an external host client or runtime gateway to the root-level solver file, append this server configuration block to your host's setup      
-
-
-
-
-
-{
-  "mcpServers": {
-    "fathertimesdkp-engine": {
-      "command": "python3",
-      "args": [
-        "/absolute/path/to/FatherTimeSDKP/mcp_kapnack_server.py"
-      ]
-    }
-  }
-}
-The Integrated Framework: FatherTimeSDKP Engine
-
-https://github.com/FatherTimeSDKP/FatherTimeSDKP
-
-https://github.com/FatherTimeSDKP/ipfs-docs
-
-https://github.com/FatherTimeSDKP/digital-crystal-authorship
-
-https://github.com/FatherTimeSDKP/pt-v5-liquidator-gh-action-bot
-
-An open-science, high-precision computational physics and simulation engine executing discrete gradient processing, quantum coherence mapping, and multi-body scaling simulations. 
-
-## Architectural Hierarchy: https://github.com/FatherTimeSDKP/Digital-Crystal-protocol-
-
-https://github.com/FatherTimeSDKP/x-algorithm-and-FatherTimeSDKP-merger
-
-https://github.com/FatherTimeSDKP/crystal-protocol
-
-https://github.com/FatherTimeSDKP/FatherTimeSDKP-
-
-The repository executes a deterministic, unified logic stack structured across five distinct operational layers:
 
 * **Variables (SDVR):** Size, Density, Velocity, and Rotation tracking fields.
 * **Logic (SD&N):** Shape, Dimension, and Number metric spaces replacing continuous coordinate manifolds.
