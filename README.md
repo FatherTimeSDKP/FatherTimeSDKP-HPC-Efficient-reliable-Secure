@@ -13,8 +13,9 @@ phone number :(352)-507-3213
 email: Dallasnamiyadaddy@gmail.com
 [View Capability Statement (PDF)]
 
-Deterministic state-evolution and coherence simulations secured via Dallas's Code crystal provenance.
-> 🌟 **Validated Research Impact:** Over 12,000+ downloads across Zenodo & OSF repositories.  
+Deterministic state-evolution and coherence simulations secured via Dallas's Code crystal provenance.Fathertimes369v system, which encodes quantum information for temporal and digital sovereignty purposes. These constructs combine principles of quantum mechanics, discrete information encoding, and time-crystalline phenomena.
+> 🌟 **Validated Research Impact:** Over 12,000+ downloads across Zenodo repositories DOIs Alone : https://zenodo.org/records/18579118 , https://zenodo.org/records/15996066 , https://zenodo.org/records/17438909 ,  https://zenodo.org/records/18052963 , https://zenodo.org/records/20636781
+
 > 🏛️ **Procurement Ready:** Commercialized via Gypsi Consulting (SAM.gov UEI: `C7UQMR5B6268`).  
 > ⚡ **Cloud Deployment:** Live FastAPI endpoints running with Dallas's Code prime crystal provenance.
 ## 🚀 Live API Endpoints
